@@ -1,4 +1,4 @@
-// 站点元信息（占位内容，用户可在这一处集中修改）
+// 站点元信息
 export const SITE = {
 	title: '我的博客',
 	author: 'xxx',
