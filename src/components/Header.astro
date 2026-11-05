@@ -1,19 +1,20 @@
 ---
 import { SITE } from '../config';
+import { withBase } from '../utils/base';
 import ThemeToggle from './ThemeToggle.astro';
 
-// 顶部导航项
+// 顶部导航项（withBase 拼接子路径前缀，适配 /blog 项目站点部署）
 const nav = [
-	{ href: '/', label: '首页' },
-	{ href: '/archive/', label: '归档' },
-	{ href: '/tags/', label: '标签' },
-	{ href: '/about/', label: '关于' },
+	{ href: withBase('/'), label: '首页' },
+	{ href: withBase('/archive/'), label: '归档' },
+	{ href: withBase('/tags/'), label: '标签' },
+	{ href: withBase('/about/'), label: '关于' },
 ];
 ---
 
 <header class="border-b border-zinc-200 dark:border-zinc-700">
 	<div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
-		<a href="/" class="text-lg font-bold">{SITE.title}</a>
+		<a href={withBase('/')} class="text-lg font-bold">{SITE.title}</a>
 		<nav class="flex items-center gap-4 text-sm">
 			{nav.map((item) => (
 				<a href={item.href} class="hover:text-amber-600 dark:hover:text-amber-400">

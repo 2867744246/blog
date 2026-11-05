@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/base';
+
 interface Props {
 	tags: string[];
 }
@@ -9,7 +11,7 @@ const { tags } = Astro.props;
 {tags.length > 0 && (
 	<div class="flex flex-wrap gap-2">
 		{tags.map((tag) => (
-			<a href={`/tags/${tag}/`} class="text-xs text-amber-700 hover:underline dark:text-amber-400">
+			<a href={withBase(`/tags/${tag}/`)} class="text-xs text-amber-700 hover:underline dark:text-amber-400">
 				#{tag}
 			</a>
 		))}

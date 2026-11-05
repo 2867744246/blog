@@ -2,6 +2,7 @@
 // 左侧文章导航：列出全部文章（按发布日期倒序），阅读时可随时切换，当前文章高亮
 // 仅宽屏（xl 及以上）显示，窄屏空间不足，通过顶部导航的「归档」访问文章列表
 import { getCollection } from 'astro:content';
+import { withBase } from '../utils/base';
 
 interface Props {
 	currentSlug: string;
@@ -24,7 +25,7 @@ const posts = (await getCollection('posts')).sort(
 			posts.map((p) => (
 				<li>
 					<a
-						href={`/posts/${p.id}/`}
+						href={withBase(`/posts/${p.id}/`)}
 						class:list={[
 							'block pl-3 hover:text-amber-600 dark:hover:text-amber-400',
 							p.id === currentSlug
