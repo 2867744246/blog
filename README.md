@@ -1,6 +1,6 @@
 # 我的博客
 
-基于 [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com) 的个人博客，部署于 GitHub Pages：<https://2867744246.github.io/>
+基于 [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com) 的个人博客，部署于 GitHub Pages：<https://2867744246.github.io/blog/>
 
 ## 写作与发布
 
