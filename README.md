@@ -4,7 +4,7 @@
 
 ## 写作与发布
 
-1. 在 `src/content/posts/` 新建 `英文slug.md`，frontmatter 格式：
+1. 在 `src/content/posts/` 新建 `xxx.md`，frontmatter 格式：
 
    ```yaml
    ---
@@ -20,7 +20,7 @@
 
 ## 站点配置
 
-站点标题、作者、简介、社交链接等集中在 `src/config.ts`（当前为占位内容，可直接修改）。
+站点标题、作者、简介、社交链接等集中在 `src/config.ts`。
 
 ## 本地开发
 
