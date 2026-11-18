@@ -10,6 +10,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://2867744246.github.io',
   // 项目站点部署在 /blog 子路径（仓库已改名），站内链接需用 withBase 拼接此前缀
+  // TODO: markdown 正文里的站内链接不会自动补 base 前缀，目前手写 /blog 前缀；
+  // 等文章互链多了，写一个 remark 插件统一改写站内链接
   base: '/blog',
   integrations: [mdx(), sitemap()],
 
