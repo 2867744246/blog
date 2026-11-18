@@ -11,9 +11,9 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="rounded-lg border border-zinc-200 p-5 transition hover:border-amber-500 dark:border-zinc-700 dark:hover:border-amber-500">
+<article class="group relative rounded-lg border border-zinc-200 p-5 transition hover:border-amber-500 dark:border-zinc-700 dark:hover:border-amber-500">
 	<h2 class="text-xl font-semibold">
-		<a href={withBase(`/posts/${post.id}/`)} class="hover:text-amber-600 dark:hover:text-amber-400">
+		<a href={withBase(`/posts/${post.id}/`)} class="after:absolute after:inset-0 after:content-[''] group-hover:text-amber-600 dark:group-hover:text-amber-400">
 			{post.data.title}
 		</a>
 	</h2>
