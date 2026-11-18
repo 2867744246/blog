@@ -6,8 +6,6 @@ type: tech
 tags: [Linux, 命令行, 运维]
 ---
 
-整理自这段时间折腾服务器用得最多的命令：systemd 服务管理、环境变量排查、SSH 隧道。按使用场景分块，每条命令带一句注释，最后是踩过的坑。
-
 ## 文件与目录
 
 ```bash
@@ -23,7 +21,6 @@ grep -rl "queue:work" /data     # 按内容找文件，只列出命中的文件�
 grep -rln --include="*.php" "queue:work" /data  # 限定文件类型再按内容搜
 find /data -name "*.log" | xargs grep -l "error"  # 先按名字筛，再按内容搜
 du -sh /data                    # 查看目录总大小
-df -h                           # 磁盘各分区使用情况
 ```
 
 ## 查看与编辑文件
@@ -81,7 +78,7 @@ env -i /usr/bin/php -v          # 极简环境运行命令，模拟 systemd 拉�
 bash -lc 'echo $LD_LIBRARY_PATH' # -l 按 login shell 加载 profile，验证变量能否继承
 ```
 
-## 网络排查与 SSH 隧道
+## 网络排查
 
 ```bash
 ping -c 4 example.com           # 发 4 个包测连通性和延迟
@@ -92,11 +89,13 @@ netstat -tlnp | grep 9001       # 确认某端口是否真的在监听
 
 ## 查帮助：忘了参数去哪查
 
+### 常用命令
+
 ```bash
 man ls                          # 完整官方手册：空格翻页、/关键词 搜索、q 退出
 ls --help                       # 内置快速帮助，只列参数不跑题
 help cd                         # shell 内建命令（cd/export/alias）用 help，man 里查不到正文
-tldr tar                        # 社区简明示例，看一眼就会用（apt install tldr）
+tldr tar                        # 社区简明示例（apt install tldr）
 ```
 
 ### 在线推荐 
